@@ -32,6 +32,24 @@ A full-stack Investment Platform built using the MERN Stack. Users can invest in
 
 ---
 
+## Project Structure
+
+```
+investment-platform/
+│
+├── backend/
+│   ├── src/
+│   ├── package.json
+│   └── .env
+│
+├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── .env
+│
+└── README.md
+```
+
 ## Tech Stack
 
 ### Frontend
