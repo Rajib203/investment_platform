@@ -1,42 +1,34 @@
 # Investment Platform
 
-A full-stack MERN Investment Platform that allows users to invest in plans, earn daily ROI, manage wallets, withdraw earnings, complete KYC verification, and grow income through a referral system. The platform also includes a complete Admin Panel for managing users, investments, deposits, withdrawals, transactions, KYC, and plans.
+A full-stack MERN Investment Platform that enables users to invest in plans, earn daily ROI, manage wallets, withdraw earnings, complete KYC verification, and build referral networks. The platform also includes a powerful Admin Dashboard for managing users, investments, deposits, withdrawals, transactions, KYC verification, and investment plans.
 
 ---
 
-## Live Demo
+# Live Demo
 
-### Frontend (Netlify)
-
+### Frontend
 https://moneyinvestment.netlify.app
 
-### Backend (Render)
-
+### Backend API
 https://investment-backend-q9yo.onrender.com
 
----
-
-## GitHub Repository
-
+### GitHub Repository
 https://github.com/Rajib203/investment_platform
 
 ---
 
-## Features
+# Features
 
-### User Features
+## User Features
 
 - User Registration & Login
 - JWT Authentication
 - Dashboard
 - Investment Plans
-- Deposit Request
-- Deposit History
+- Deposit & Deposit History
 - ROI History
-- Wallet Management
-- Wallet History
-- Withdrawal Request
-- Withdrawal History
+- Wallet & Wallet History
+- Withdrawal & Withdrawal History
 - Referral System
 - Referral Income
 - Referral Tree
@@ -44,25 +36,24 @@ https://github.com/Rajib203/investment_platform
 - Profile Management
 - Logout
 
-### Admin Features
+## Admin Features
 
-- Admin Registration
-- Admin Login
+- Admin Registration & Login
 - Dashboard
 - User Management
 - Investment Management
 - Deposit Management
 - Withdrawal Management
 - Transaction Management
-- KYC Verification
 - Plan Management
+- KYC Management
 - Logout
 
 ---
 
-## Tech Stack
+# Tech Stack
 
-### Frontend
+## Frontend
 
 - React.js
 - Vite
@@ -73,7 +64,7 @@ https://github.com/Rajib203/investment_platform
 - React Icons
 - React Hot Toast
 
-### Backend
+## Backend
 
 - Node.js
 - Express.js
@@ -87,83 +78,77 @@ https://github.com/Rajib203/investment_platform
 
 ---
 
-## User Access
-
-### Register
-
-https://moneyinvestment.netlify.app/register
-
-### Login
-
-https://moneyinvestment.netlify.app/login
-
----
-
-## Admin Access
-
-### Register
-
-https://moneyinvestment.netlify.app/admin/register
-
-### Login
-
-https://moneyinvestment.netlify.app/admin/login
-
----
-
-# API Endpoints
+# Application Routes
 
 ## User
 
-### Register
-
-POST
-
-```
-https://investment-backend-q9yo.onrender.com/api/v1/auth/register
-```
-
-### Login
-
-POST
-
-```
-https://investment-backend-q9yo.onrender.com/api/v1/auth/login
-```
+| Feature | Route |
+|---------|-------|
+| Register | `/register` |
+| Login | `/login` |
+| Dashboard | `/dashboard` |
+| Profile | `/profile` |
+| Investments | `/investments` |
+| Deposit | `/deposit` |
+| Deposit History | `/user/deposit-history` |
+| Wallet | `/wallet` |
+| Wallet History | `/wallet/history` |
+| Withdrawal | `/withdraw` |
+| Withdrawal History | `/withdraw/history` |
+| ROI History | `/roi-history` |
+| KYC | `/kyc` |
+| Direct Referrals | `/referrals` |
+| Referral Income | `/referral-income` |
+| Referral Tree | `/referral-tree` |
 
 ---
 
 ## Admin
 
-### Register
-
-POST
-
-```
-https://investment-backend-q9yo.onrender.com/api/v1/admin/register
-```
-
-### Login
-
-POST
-
-```
-https://investment-backend-q9yo.onrender.com/api/v1/admin/login
-```
+| Feature | Route |
+|---------|-------|
+| Register | `/admin/register` |
+| Login | `/admin/login` |
+| Dashboard | `/admin/dashboard` |
+| Users | `/admin/users` |
+| Plans | `/admin/plans` |
+| Investments | `/admin/investments` |
+| Deposits | `/admin/deposits` |
+| Withdrawals | `/admin/withdrawals` |
+| Transactions | `/admin/transactions` |
+| KYC | `/admin/kyc` |
 
 ---
 
-## Installation
+# API Endpoints
 
-### Clone Repository
+## Authentication
+
+### User
+
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/v1/auth/register` |
+| POST | `/api/v1/auth/login` |
+
+### Admin
+
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/v1/admin/register` |
+| POST | `/api/v1/admin/login` |
+
+---
+
+# Installation
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/Rajib203/investment_platform.git
 ```
 
----
-
-### Backend
+## Backend
 
 ```bash
 cd backend
@@ -171,9 +156,7 @@ npm install
 npm run dev
 ```
 
----
-
-### Frontend
+## Frontend
 
 ```bash
 cd frontend
@@ -183,11 +166,11 @@ npm run dev
 
 ---
 
-## Environment Variables
+# Environment Variables
 
-### Backend
+## Backend
 
-```
+```env
 PORT=
 
 MONGODB_URI=
@@ -213,71 +196,70 @@ CLOUDINARY_API_SECRET=
 FRONTEND_URL=
 ```
 
-### Frontend
+## Frontend
 
-```
+```env
 VITE_API_URL=
 ```
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
 investment_platform
 │
 ├── backend
 │   ├── src
-│   ├── routes
+│   ├── config
 │   ├── controllers
-│   ├── models
 │   ├── middleware
-│   ├── cron
-│   └── config
-│
-├── frontend
-│   ├── src
-│   ├── components
-│   ├── pages
-│   ├── services
+│   ├── models
 │   ├── routes
-│   └── context
+│   ├── cron
+│   └── services
+│
+└── frontend
+    ├── src
+    ├── components
+    ├── pages
+    ├── routes
+    ├── services
+    ├── context
+    └── assets
 ```
 
 ---
 
-## Business Logic
+# Business Logic
 
 - Daily ROI Distribution using Node Cron
 - Automatic Wallet Balance Update
-- Referral Income Distribution
-- Multi-level Referral Tree
-- JWT Protected Routes
-- Role-based Authentication
-- Transaction History
+- Multi-Level Referral Income Distribution
+- Referral Tree Generation
+- JWT Authentication
+- Role-Based Authorization
+- Transaction Management
 - Investment Management
 
 ---
 
-## Deployment
+# Deployment
 
-Frontend deployed on Netlify
-
-Backend deployed on Render
-
-Database hosted on MongoDB Atlas
+- **Frontend:** Netlify
+- **Backend:** Render
+- **Database:** MongoDB Atlas
 
 ---
 
-## Author
+# Author
 
 **Sk Rajib Uddin**
 
-GitHub
+GitHub: https://github.com/Rajib203
 
-https://github.com/Rajib203
 ---
 
-## License
+# License
 
-This project was developed as part of a MERN Stack Developer Technical Assessment and is intended for learning and portfolio purposes.
+This project was developed as part of a MERN Stack Developer Technical Assessment and is intended for educational and portfolio purposes.
