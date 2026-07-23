@@ -16,7 +16,9 @@ import DepositHistory from "../pages/user/DepositHistory";
 import Wallet from "../pages/user/Wallet";
 import WalletHistory from "../pages/user/WalletHistory";
 import UserTransactions from "../pages/user/Transactions";
-
+import Withdrawal from "../pages/user/Withdrawal";
+import WithdrawalHistory from "../pages/user/WithdrawalHistory";
+import ROIHistory from "../pages/user/ROIHistory";
 import DirectReferrals from "../pages/user/DirectReferrals";
 import ReferralIncome from "../pages/user/ReferralIncome";
 import ReferralTree from "../pages/user/ReferralTree";
@@ -27,38 +29,31 @@ import AdminDashboard from "../pages/admin/Dashboard";
 import AdminUsers from "../pages/admin/Users";
 import AdminPlans from "../pages/admin/Plans";
 import AdminRegister from "../pages/admin/AdminRegister";
-
-// Inside <Routes>
-<Route path="/admin/register" element={<AdminRegister />} />;
 import AdminInvestments from "../pages/admin/Investments";
 import InvestmentDetails from "../pages/admin/InvestmentDetails";
 import AdminWithdrawals from "../pages/admin/Withdrawals";
+import WithdrawalDetails from "../pages/admin/WithdrawalDetails";
 import AdminTransactions from "../pages/admin/Transactions";
 import TransactionDetails from "../pages/admin/TransactionDetails";
 import AdminKYC from "../pages/admin/KYC";
 import KYCDetails from "../pages/admin/KYCDetails";
 import AdminDeposits from "../pages/admin/AdminDeposits";
-import Withdrawal from "../pages/user/Withdrawal";
-import WithdrawalHistory from "../pages/user/WithdrawalHistory";
-import WithdrawalDetails from "../pages/admin/WithdrawalDetails"; // Check path
+
 // Middleware
 import ProtectedRoute from "./ProtectedRoute";
-import ROIHistory from "../pages/user/ROIHistory";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* ================= Public ================= */}
-
+        {/* Public Routes */}
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
 
-        {/* ================= User ================= */}
-
+        {/* User Routes */}
         <Route
           path="/dashboard"
           element={
@@ -140,35 +135,6 @@ const AppRoutes = () => {
           }
         />
 
-        {/* ================= Admin ================= */}
-
-        <Route path="/admin/login" element={<AdminLogin />} />
-
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-
-        <Route path="/admin/users" element={<AdminUsers />} />
-
-        <Route path="/admin/plans" element={<AdminPlans />} />
-
-        <Route path="/admin/investments" element={<AdminInvestments />} />
-
-        <Route path="/admin/investments/:id" element={<InvestmentDetails />} />
-
-        <Route path="/admin/withdrawals" element={<AdminWithdrawals />} />
-
-        <Route path="/admin/deposits" element={<AdminDeposits />} />
-
-        <Route path="/admin/transactions" element={<AdminTransactions />} />
-
-        <Route
-          path="/admin/transactions/:id"
-          element={<TransactionDetails />}
-        />
-
-        <Route path="/admin/kyc" element={<AdminKYC />} />
-
-        <Route path="/admin/kyc/:id" element={<KYCDetails />} />
-
         <Route
           path="/withdraw"
           element={
@@ -186,8 +152,7 @@ const AppRoutes = () => {
             </ProtectedRoute>
           }
         />
-        <Route path="/admin/withdrawals/:id" element={<WithdrawalDetails />} />
-        <Route path="/admin/register" element={<AdminRegister />} />
+
         <Route
           path="/roi-history"
           element={
@@ -196,6 +161,7 @@ const AppRoutes = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/referrals"
           element={
@@ -222,6 +188,31 @@ const AppRoutes = () => {
             </ProtectedRoute>
           }
         />
+
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/register" element={<AdminRegister />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
+        <Route path="/admin/plans" element={<AdminPlans />} />
+        <Route path="/admin/investments" element={<AdminInvestments />} />
+        <Route
+          path="/admin/investments/:id"
+          element={<InvestmentDetails />}
+        />
+        <Route path="/admin/deposits" element={<AdminDeposits />} />
+        <Route path="/admin/withdrawals" element={<AdminWithdrawals />} />
+        <Route
+          path="/admin/withdrawals/:id"
+          element={<WithdrawalDetails />}
+        />
+        <Route path="/admin/transactions" element={<AdminTransactions />} />
+        <Route
+          path="/admin/transactions/:id"
+          element={<TransactionDetails />}
+        />
+        <Route path="/admin/kyc" element={<AdminKYC />} />
+        <Route path="/admin/kyc/:id" element={<KYCDetails />} />
       </Routes>
     </BrowserRouter>
   );
