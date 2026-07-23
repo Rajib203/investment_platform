@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-import Sidebar from "../../components/Layout/Sidebar";
-import Navbar from "../../components/Layout/Navbar";
+import Sidebar from "../../components/layout/Sidebar";
+import Navbar from "../../components/layout/Navbar";
 
 import { getWalletHistory } from "../../services/wallet.service";
 
