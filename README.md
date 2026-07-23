@@ -117,6 +117,50 @@ FRONTEND_URL=
 
 ---
 
+## Usage
+
+### User Registration
+
+1. Open the application.
+2. Click **Register**.
+3. Enter:
+   - Full Name
+   - Email
+   - Mobile Number
+   - Password
+4. Click **Register**.
+5. Login using the registered email and password.
+
+### User Login
+
+- URL: `/login`
+- Enter your registered email and password.
+- After successful login, you will be redirected to the User Dashboard.
+
+### Admin Registration
+
+> Admin accounts cannot be created from the normal user registration page.
+
+To create an admin account, open:
+
+```
+/admin/register
+```
+
+Fill in the required details and register.
+
+### Admin Login
+
+Open:
+
+```
+/admin/login
+```
+
+Login using the admin email and password.
+
+After successful login, you will be redirected to the Admin Dashboard.
+
 ## Author
 
 **Sk Rajib Uddin**
