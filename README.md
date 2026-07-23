@@ -130,6 +130,7 @@ FRONTEND_URL=
    - Password
 4. Click **Register**.
 5. Login using the registered email and password.
+6. /register 
 
 ### User Login
 
