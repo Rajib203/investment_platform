@@ -1,77 +1,167 @@
 # Investment Platform
 
-A full-stack Investment Platform built using the MERN Stack. Users can invest in plans, earn daily ROI, manage wallets, withdraw funds, complete KYC verification, and earn referral income. Admins can manage users, investments, deposits, withdrawals, KYC requests, and analytics.
+A full-stack MERN Investment Platform that allows users to invest in plans, earn daily ROI, manage wallets, withdraw earnings, complete KYC verification, and grow income through a referral system. The platform also includes a complete Admin Panel for managing users, investments, deposits, withdrawals, transactions, KYC, and plans.
+
+---
+
+## Live Demo
+
+### Frontend (Netlify)
+
+https://moneyinvestment.netlify.app
+
+### Backend (Render)
+
+https://investment-backend-q9yo.onrender.com
+
+---
+
+## GitHub Repository
+
+https://github.com/Rajib203/investment_platform
 
 ---
 
 ## Features
 
-### User
+### User Features
+
 - User Registration & Login
 - JWT Authentication
 - Dashboard
 - Investment Plans
-- Wallet Management
-- Deposit & Withdrawal
+- Deposit Request
+- Deposit History
 - ROI History
-- Transaction History
-- KYC Verification
-- Referral System (10 Levels)
+- Wallet Management
+- Wallet History
+- Withdrawal Request
+- Withdrawal History
+- Referral System
+- Referral Income
 - Referral Tree
+- KYC Verification
+- Profile Management
 - Logout
 
-### Admin
-- Admin Dashboard
+### Admin Features
+
+- Admin Registration
+- Admin Login
+- Dashboard
 - User Management
+- Investment Management
+- Deposit Management
+- Withdrawal Management
+- Transaction Management
+- KYC Verification
 - Plan Management
-- Deposit Approval
-- Withdrawal Approval
-- KYC Approval
-- Transaction Monitoring
-- Analytics
+- Logout
 
 ---
-
-## Project Structure
-
-```
-investment-platform/
-│
-├── backend/
-│   ├── src/
-│   ├── package.json
-│   └── .env
-│
-├── frontend/
-│   ├── src/
-│   ├── package.json
-│   └── .env
-│
-└── README.md
-```
 
 ## Tech Stack
 
 ### Frontend
-- React
+
+- React.js
 - Vite
 - Tailwind CSS
+- React Router DOM
 - Axios
-- React Router
+- Recharts
+- React Icons
+- React Hot Toast
 
 ### Backend
+
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB Atlas
 - Mongoose
-- JWT
+- JWT Authentication
 - Node Cron
 - Cloudinary
 - Nodemailer
+- Express Validator
+
+---
+
+## User Access
+
+### Register
+
+https://moneyinvestment.netlify.app/register
+
+### Login
+
+https://moneyinvestment.netlify.app/login
+
+---
+
+## Admin Access
+
+### Register
+
+https://moneyinvestment.netlify.app/admin/register
+
+### Login
+
+https://moneyinvestment.netlify.app/admin/login
+
+---
+
+# API Endpoints
+
+## User
+
+### Register
+
+POST
+
+```
+https://investment-backend-q9yo.onrender.com/api/v1/auth/register
+```
+
+### Login
+
+POST
+
+```
+https://investment-backend-q9yo.onrender.com/api/v1/auth/login
+```
+
+---
+
+## Admin
+
+### Register
+
+POST
+
+```
+https://investment-backend-q9yo.onrender.com/api/v1/admin/register
+```
+
+### Login
+
+POST
+
+```
+https://investment-backend-q9yo.onrender.com/api/v1/admin/login
+```
 
 ---
 
 ## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Rajib203/investment_platform.git
+```
+
+---
 
 ### Backend
 
@@ -80,6 +170,8 @@ cd backend
 npm install
 npm run dev
 ```
+
+---
 
 ### Frontend
 
@@ -93,77 +185,99 @@ npm run dev
 
 ## Environment Variables
 
-Create a `.env` file inside the `backend` folder.
+### Backend
 
-```env
+```
 PORT=
+
 MONGODB_URI=
+
 JWT_SECRET=
+
+JWT_EXPIRE=
+
+EMAIL_HOST=
+
+EMAIL_PORT=
+
 EMAIL_USER=
+
 EMAIL_PASS=
+
 CLOUDINARY_CLOUD_NAME=
+
 CLOUDINARY_API_KEY=
+
 CLOUDINARY_API_SECRET=
+
 FRONTEND_URL=
 ```
+
+### Frontend
+
+```
+VITE_API_URL=
+```
+
+---
+
+## Project Structure
+
+```
+investment_platform
+│
+├── backend
+│   ├── src
+│   ├── routes
+│   ├── controllers
+│   ├── models
+│   ├── middleware
+│   ├── cron
+│   └── config
+│
+├── frontend
+│   ├── src
+│   ├── components
+│   ├── pages
+│   ├── services
+│   ├── routes
+│   └── context
+```
+
+---
+
+## Business Logic
+
+- Daily ROI Distribution using Node Cron
+- Automatic Wallet Balance Update
+- Referral Income Distribution
+- Multi-level Referral Tree
+- JWT Protected Routes
+- Role-based Authentication
+- Transaction History
+- Investment Management
 
 ---
 
 ## Deployment
 
-- **Frontend:** Vercel
-- **Backend:** Render
-- **Database:** MongoDB Atlas
+Frontend deployed on Netlify
+
+Backend deployed on Render
+
+Database hosted on MongoDB Atlas
 
 ---
-
-## Usage
-
-### User Registration
-
-1. Open the application.
-2. Click **Register**.
-3. Enter:
-   - Full Name
-   - Email
-   - Mobile Number
-   - Password
-4. Click **Register**.
-5. Login using the registered email and password.
-6. /register 
-
-### User Login
-
-- URL: `/login`
-- Enter your registered email and password.
-- After successful login, you will be redirected to the User Dashboard.
-
-### Admin Registration
-
-> Admin accounts cannot be created from the normal user registration page.
-
-To create an admin account, open:
-
-```
-/admin/register
-```
-
-Fill in the required details and register.
-
-### Admin Login
-
-Open:
-
-```
-/admin/login
-```
-
-Login using the admin email and password.
-
-After successful login, you will be redirected to the Admin Dashboard.
 
 ## Author
 
 **Sk Rajib Uddin**
 
-B.Tech CSE Student | MERN Stack Developer
+GitHub
+
+https://github.com/Rajib203
+---
+
+## License
+
+This project was developed as part of a MERN Stack Developer Technical Assessment and is intended for learning and portfolio purposes.
