@@ -144,9 +144,11 @@ export const approveKYC = async (id, adminId) => {
     }
   );
 
-  // Send approval email
+  // Send approval email in the background
   if (user) {
-    await sendKYCApprovedEmail(user);
+    sendKYCApprovedEmail(user).catch((error) => {
+      console.error("KYC Approval Email Error:", error.message);
+    });
   }
 
   return kyc;
@@ -189,12 +191,11 @@ export const rejectKYC = async (
     }
   );
 
-  // Send rejection email
+  // Send rejection email in the background
   if (user) {
-    await sendKYCRejectedEmail(
-      user,
-      remark
-    );
+    sendKYCRejectedEmail(user, remark).catch((error) => {
+      console.error("KYC Rejection Email Error:", error.message);
+    });
   }
 
   return kyc;

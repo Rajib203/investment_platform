@@ -27,11 +27,10 @@ export const createDeposit = async (req, res) => {
 
     const user = await User.findById(req.user._id);
 
-    try {
-      await sendDepositRequestEmail(user, deposit);
-    } catch (error) {
+    // Send email in the background
+    sendDepositRequestEmail(user, deposit).catch((error) => {
       console.log("Deposit Email Error:", error.message);
-    }
+    });
 
     return res.status(201).json({
       success: true,
@@ -128,17 +127,10 @@ export const approveDeposit = async (req, res) => {
 
     const user = await User.findById(deposit.user);
 
-    try {
-      await sendDepositApprovedEmail(
-        user,
-        deposit
-      );
-    } catch (error) {
-      console.log(
-        "Approval Email Error:",
-        error.message
-      );
-    }
+    // Send email in the background
+    sendDepositApprovedEmail(user, deposit).catch((error) => {
+      console.log("Approval Email Error:", error.message);
+    });
 
     return res.status(200).json({
       success: true,
@@ -168,17 +160,10 @@ export const rejectDeposit = async (req, res) => {
 
     const user = await User.findById(deposit.user);
 
-    try {
-      await sendDepositRejectedEmail(
-        user,
-        deposit
-      );
-    } catch (error) {
-      console.log(
-        "Rejection Email Error:",
-        error.message
-      );
-    }
+    // Send email in the background
+    sendDepositRejectedEmail(user, deposit).catch((error) => {
+      console.log("Rejection Email Error:", error.message);
+    });
 
     return res.status(200).json({
       success: true,

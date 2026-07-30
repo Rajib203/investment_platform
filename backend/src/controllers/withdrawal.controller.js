@@ -20,11 +20,10 @@ export const createWithdrawal = async (req, res) => {
 
     const user = await User.findById(req.user._id);
 
-    try {
-      await sendWithdrawalRequestEmail(user, withdrawal);
-    } catch (err) {
+    // Send email in the background
+    sendWithdrawalRequestEmail(user, withdrawal).catch((err) => {
       console.log("Withdrawal Email Error:", err.message);
-    }
+    });
 
     return res.status(201).json({
       success: true,
@@ -131,14 +130,10 @@ export const approveWithdrawal = async (req, res) => {
 
     const user = await User.findById(withdrawal.user);
 
-    try {
-      await sendWithdrawalApprovedEmail(
-        user,
-        withdrawal
-      );
-    } catch (err) {
+    // Send email in the background
+    sendWithdrawalApprovedEmail(user, withdrawal).catch((err) => {
       console.log("Approval Email Error:", err.message);
-    }
+    });
 
     return res.status(200).json({
       success: true,
@@ -168,14 +163,10 @@ export const rejectWithdrawal = async (req, res) => {
 
     const user = await User.findById(withdrawal.user);
 
-    try {
-      await sendWithdrawalRejectedEmail(
-        user,
-        withdrawal
-      );
-    } catch (err) {
+    // Send email in the background
+    sendWithdrawalRejectedEmail(user, withdrawal).catch((err) => {
       console.log("Rejection Email Error:", err.message);
-    }
+    });
 
     return res.status(200).json({
       success: true,

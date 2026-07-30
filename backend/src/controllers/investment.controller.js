@@ -13,12 +13,10 @@ export const createInvestment = async (req, res) => {
     // Fetch User
     const user = await User.findById(req.user._id);
 
-    // Send Investment Email
-    try {
-      await sendInvestmentEmail(user, investment);
-    } catch (error) {
+    // Send Investment Email in the background
+    sendInvestmentEmail(user, investment).catch((error) => {
       console.error("Investment Email Error:", error.message);
-    }
+    });
 
     return res.status(201).json({
       success: true,
