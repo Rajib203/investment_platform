@@ -109,7 +109,7 @@ export const forgotPassword = async (email) => {
 
   console.log("5");
 
-  const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+  const resetUrl = `https://moneyinvestment.netlify.app/${resetToken}`;
 
   console.log("6");
 
