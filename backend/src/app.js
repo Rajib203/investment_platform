@@ -25,13 +25,19 @@ import walletRoutes from "./routes/wallet.routes.js";
 const app = express();
 
 // Standard Middlewares
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  "http://localhost:5173",
+  "http://localhost:3000",
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: allowedOrigins,
     credentials: true,
   })
 );
-;app.use(helmet());
+app.use(helmet());
 app.use(compression());
 app.use(morgan("dev"));
 app.use(express.json());

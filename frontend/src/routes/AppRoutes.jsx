@@ -41,6 +41,7 @@ import AdminDeposits from "../pages/admin/AdminDeposits";
 
 // Middleware
 import ProtectedRoute from "./ProtectedRoute";
+import AdminRoute from "./AdminRoute";
 
 const AppRoutes = () => {
   return (
@@ -192,27 +193,102 @@ const AppRoutes = () => {
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/register" element={<AdminRegister />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/users" element={<AdminUsers />} />
-        <Route path="/admin/plans" element={<AdminPlans />} />
-        <Route path="/admin/investments" element={<AdminInvestments />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <AdminRoute>
+              <AdminUsers />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/plans"
+          element={
+            <AdminRoute>
+              <AdminPlans />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/investments"
+          element={
+            <AdminRoute>
+              <AdminInvestments />
+            </AdminRoute>
+          }
+        />
         <Route
           path="/admin/investments/:id"
-          element={<InvestmentDetails />}
+          element={
+            <AdminRoute>
+              <InvestmentDetails />
+            </AdminRoute>
+          }
         />
-        <Route path="/admin/deposits" element={<AdminDeposits />} />
-        <Route path="/admin/withdrawals" element={<AdminWithdrawals />} />
+        <Route
+          path="/admin/deposits"
+          element={
+            <AdminRoute>
+              <AdminDeposits />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/withdrawals"
+          element={
+            <AdminRoute>
+              <AdminWithdrawals />
+            </AdminRoute>
+          }
+        />
         <Route
           path="/admin/withdrawals/:id"
-          element={<WithdrawalDetails />}
+          element={
+            <AdminRoute>
+              <WithdrawalDetails />
+            </AdminRoute>
+          }
         />
-        <Route path="/admin/transactions" element={<AdminTransactions />} />
+        <Route
+          path="/admin/transactions"
+          element={
+            <AdminRoute>
+              <AdminTransactions />
+            </AdminRoute>
+          }
+        />
         <Route
           path="/admin/transactions/:id"
-          element={<TransactionDetails />}
+          element={
+            <AdminRoute>
+              <TransactionDetails />
+            </AdminRoute>
+          }
         />
-        <Route path="/admin/kyc" element={<AdminKYC />} />
-        <Route path="/admin/kyc/:id" element={<KYCDetails />} />
+        <Route
+          path="/admin/kyc"
+          element={
+            <AdminRoute>
+              <AdminKYC />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/kyc/:id"
+          element={
+            <AdminRoute>
+              <KYCDetails />
+            </AdminRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
