@@ -14,18 +14,17 @@ export const register = async (req, res) => {
   try {
     const user = await authService.registerUser(req.body);
 
-    try {
-      await sendWelcomeEmail(user);
-    } catch (error) {
-      console.log("Email Error:", error.message);
-    }
-
-    // ❌ DO NOT generate or return a JWT token here
-
+    // Respond immediately
     res.status(201).json({
       success: true,
       message: "User registered successfully. Please log in.",
     });
+
+    // Send welcome email in the background
+    sendWelcomeEmail(user).catch((error) => {
+      console.log("Email Error:", error.message);
+    });
+
   } catch (error) {
     res.status(400).json({
       success: false,
@@ -33,7 +32,6 @@ export const register = async (req, res) => {
     });
   }
 };
-
 /* ==========================================
    Login
 ========================================== */
