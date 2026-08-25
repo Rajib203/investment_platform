@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Sidebar from "../../components/layout/Sidebar";
+import Navbar from "../../components/layout/Navbar";
 import { getProfile } from "../../services/user.service";
 
 const Profile = () => {
@@ -19,79 +21,91 @@ const Profile = () => {
 
   if (!user) {
     return (
-      <div className="p-10 text-center">
-        Loading...
+      <div className="flex min-h-screen bg-slate-50 text-slate-800">
+        <Sidebar />
+        <div className="flex-1">
+          <Navbar />
+          <div className="p-10 text-center text-slate-500 font-medium">
+            Loading Profile...
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="p-6">
+    <div className="flex min-h-screen bg-slate-50 text-slate-800">
+      <Sidebar />
 
-      <h1 className="text-3xl font-bold mb-8">
-        My Profile
-      </h1>
+      <div className="flex-1">
+        <Navbar />
 
-      <div className="bg-white shadow rounded-xl p-8">
+        <div className="p-6">
+          <h1 className="text-3xl font-bold mb-8 text-slate-900">
+            My Profile
+          </h1>
 
-        <div className="space-y-4">
+          <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-8 max-w-2xl">
+            <div className="space-y-6">
+              <div className="border-b border-slate-100 pb-4">
+                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                  Full Name
+                </h3>
+                <p className="text-xl font-bold text-slate-900 mt-1">
+                  {user.fullName}
+                </p>
+              </div>
 
-          <div>
-            <h3 className="text-gray-500">
-              Full Name
-            </h3>
+              <div className="border-b border-slate-100 pb-4">
+                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                  Email Address
+                </h3>
+                <p className="text-slate-900 font-medium mt-1">
+                  {user.email}
+                </p>
+              </div>
 
-            <p className="text-xl font-semibold">
-              {user.fullName}
-            </p>
+              <div className="border-b border-slate-100 pb-4">
+                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                  Mobile Number
+                </h3>
+                <p className="text-slate-900 font-medium mt-1">
+                  {user.mobileNumber}
+                </p>
+              </div>
+
+              <div className="border-b border-slate-100 pb-4">
+                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                  Referral Code
+                </h3>
+                <p className="text-slate-900 font-mono font-medium mt-1">
+                  {user.referralCode}
+                </p>
+              </div>
+
+              <div className="border-b border-slate-100 pb-4">
+                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                  Wallet Balance
+                </h3>
+                <p className="text-xl font-bold text-green-600 mt-1">
+                  ₹{user.walletBalance}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                  Account Status
+                </h3>
+                <div className="mt-2">
+                  <span className="bg-green-100 text-green-700 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    {user.accountStatus}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div>
-            <h3 className="text-gray-500">
-              Email
-            </h3>
-
-            <p>{user.email}</p>
-          </div>
-
-          <div>
-            <h3 className="text-gray-500">
-              Mobile Number
-            </h3>
-
-            <p>{user.mobileNumber}</p>
-          </div>
-
-          <div>
-            <h3 className="text-gray-500">
-              Referral Code
-            </h3>
-
-            <p>{user.referralCode}</p>
-          </div>
-
-          <div>
-            <h3 className="text-gray-500">
-              Wallet Balance
-            </h3>
-
-            <p>₹{user.walletBalance}</p>
-          </div>
-
-          <div>
-            <h3 className="text-gray-500">
-              Account Status
-            </h3>
-
-            <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full">
-              {user.accountStatus}
-            </span>
-          </div>
-
         </div>
-
       </div>
-
     </div>
   );
 };
