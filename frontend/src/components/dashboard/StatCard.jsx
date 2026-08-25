@@ -3,7 +3,7 @@ const StatCard = ({ title, value, color, icon }) => {
     <div className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition duration-300">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-gray-500 text-sm font-medium">
+          <p className="text-slate-600 text-sm font-semibold uppercase tracking-wider">
             {title}
           </p>
 

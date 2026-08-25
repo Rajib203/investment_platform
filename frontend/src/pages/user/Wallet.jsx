@@ -69,43 +69,43 @@ const Wallet = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <div className="bg-white rounded-xl shadow p-5">
-              <p className="text-gray-500">Wallet Balance</p>
-              <h2 className="text-3xl font-bold text-green-600 mt-2">
+              <p className="text-slate-600 text-sm font-semibold uppercase tracking-wider">Wallet Balance</p>
+              <h2 className="text-3xl font-bold text-green-700 mt-2">
                 ₹{wallet.walletBalance}
               </h2>
             </div>
 
             <div className="bg-white rounded-xl shadow p-5">
-              <p className="text-gray-500">Total Deposit</p>
-              <h2 className="text-3xl font-bold text-blue-600 mt-2">
+              <p className="text-slate-600 text-sm font-semibold uppercase tracking-wider">Total Deposit</p>
+              <h2 className="text-3xl font-bold text-blue-700 mt-2">
                 ₹{wallet.totalDeposit}
               </h2>
             </div>
 
             <div className="bg-white rounded-xl shadow p-5">
-              <p className="text-gray-500">Total Investment</p>
-              <h2 className="text-3xl font-bold text-purple-600 mt-2">
+              <p className="text-slate-600 text-sm font-semibold uppercase tracking-wider">Total Investment</p>
+              <h2 className="text-3xl font-bold text-indigo-750 mt-2">
                 ₹{wallet.totalInvestment}
               </h2>
             </div>
 
             <div className="bg-white rounded-xl shadow p-5">
-              <p className="text-gray-500">ROI Earned</p>
-              <h2 className="text-3xl font-bold text-green-500 mt-2">
+              <p className="text-slate-600 text-sm font-semibold uppercase tracking-wider">ROI Earned</p>
+              <h2 className="text-3xl font-bold text-emerald-700 mt-2">
                 ₹{wallet.totalROI}
               </h2>
             </div>
 
             <div className="bg-white rounded-xl shadow p-5">
-              <p className="text-gray-500">Referral Income</p>
-              <h2 className="text-3xl font-bold text-orange-500 mt-2">
+              <p className="text-slate-600 text-sm font-semibold uppercase tracking-wider">Referral Income</p>
+              <h2 className="text-3xl font-bold text-amber-700 mt-2">
                 ₹{wallet.totalReferral}
               </h2>
             </div>
 
             <div className="bg-white rounded-xl shadow p-5">
-              <p className="text-gray-500">Withdrawals</p>
-              <h2 className="text-3xl font-bold text-red-500 mt-2">
+              <p className="text-slate-600 text-sm font-semibold uppercase tracking-wider">Withdrawals</p>
+              <h2 className="text-3xl font-bold text-rose-700 mt-2">
                 ₹{wallet.totalWithdrawal}
               </h2>
             </div>
@@ -124,7 +124,7 @@ const Wallet = () => {
 
               <table className="w-full">
 
-                <thead className="bg-gray-100">
+                <thead className="bg-slate-100 text-slate-850 font-bold border-b border-slate-200">
                   <tr>
                     <th className="p-3 text-left">Type</th>
                     <th className="p-3 text-left">Amount</th>
@@ -134,13 +134,13 @@ const Wallet = () => {
                   </tr>
                 </thead>
 
-                <tbody>
+                <tbody className="text-slate-700">
 
                   {wallet.recentTransactions.length === 0 ? (
                     <tr>
                       <td
                         colSpan="5"
-                        className="text-center p-5 text-gray-500"
+                        className="text-center p-5 text-slate-600 font-medium"
                       >
                         No Transactions Found
                       </td>
@@ -149,33 +149,33 @@ const Wallet = () => {
                     wallet.recentTransactions.map((tx) => (
                       <tr
                         key={tx._id}
-                        className="border-b hover:bg-gray-50"
+                        className="border-b border-slate-100 hover:bg-gray-50/50"
                       >
-                        <td className="p-3">{tx.type}</td>
+                        <td className="p-3 font-medium text-slate-900">{tx.type}</td>
 
-                        <td className="p-3 font-semibold">
+                        <td className="p-3 font-semibold text-slate-800">
                           ₹{tx.amount}
                         </td>
 
                         <td className="p-3">
                           <span
-                            className={`px-3 py-1 rounded-full text-white ${
-                              tx.status === "SUCCESS"
-                                ? "bg-green-600"
-                                : tx.status === "FAILED"
-                                ? "bg-red-600"
-                                : "bg-yellow-500"
+                            className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                              tx.status === "SUCCESS" || tx.status === "Success" || tx.status === "Approved" || tx.status === "Completed"
+                                ? "bg-emerald-100 text-emerald-800"
+                                : tx.status === "FAILED" || tx.status === "Failed" || tx.status === "Rejected"
+                                ? "bg-rose-100 text-rose-800"
+                                : "bg-amber-100 text-amber-850"
                             }`}
                           >
                             {tx.status}
                           </span>
                         </td>
 
-                        <td className="p-3">
+                        <td className="p-3 text-slate-700">
                           {tx.description}
                         </td>
 
-                        <td className="p-3">
+                        <td className="p-3 text-xs text-slate-600 font-medium">
                           {new Date(tx.createdAt).toLocaleDateString()}
                         </td>
                       </tr>

@@ -48,7 +48,7 @@ const Profile = () => {
           <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-8 max-w-2xl">
             <div className="space-y-6">
               <div className="border-b border-slate-100 pb-4">
-                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                <h3 className="text-slate-600 text-xs font-bold uppercase tracking-wider">
                   Full Name
                 </h3>
                 <p className="text-xl font-bold text-slate-900 mt-1">
@@ -57,47 +57,47 @@ const Profile = () => {
               </div>
 
               <div className="border-b border-slate-100 pb-4">
-                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                <h3 className="text-slate-600 text-xs font-bold uppercase tracking-wider">
                   Email Address
                 </h3>
-                <p className="text-slate-900 font-medium mt-1">
+                <p className="text-slate-900 font-semibold mt-1">
                   {user.email}
                 </p>
               </div>
 
               <div className="border-b border-slate-100 pb-4">
-                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                <h3 className="text-slate-600 text-xs font-bold uppercase tracking-wider">
                   Mobile Number
                 </h3>
-                <p className="text-slate-900 font-medium mt-1">
+                <p className="text-slate-900 font-semibold mt-1">
                   {user.mobileNumber}
                 </p>
               </div>
 
               <div className="border-b border-slate-100 pb-4">
-                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                <h3 className="text-slate-600 text-xs font-bold uppercase tracking-wider">
                   Referral Code
                 </h3>
-                <p className="text-slate-900 font-mono font-medium mt-1">
+                <p className="text-slate-900 font-mono font-semibold mt-1">
                   {user.referralCode}
                 </p>
               </div>
 
               <div className="border-b border-slate-100 pb-4">
-                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                <h3 className="text-slate-600 text-xs font-bold uppercase tracking-wider">
                   Wallet Balance
                 </h3>
-                <p className="text-xl font-bold text-green-600 mt-1">
+                <p className="text-xl font-bold text-green-700 mt-1">
                   ₹{user.walletBalance}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-slate-500 text-sm font-medium uppercase tracking-wider">
+                <h3 className="text-slate-600 text-xs font-bold uppercase tracking-wider">
                   Account Status
                 </h3>
                 <div className="mt-2">
-                  <span className="bg-green-100 text-green-700 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                  <span className="bg-emerald-100 text-emerald-800 border border-emerald-250 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
                     {user.accountStatus}
                   </span>
                 </div>

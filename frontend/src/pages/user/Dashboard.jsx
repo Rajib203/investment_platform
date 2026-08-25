@@ -112,35 +112,35 @@ const Dashboard = () => {
             <StatCard
               title="Wallet Balance"
               value={`₹${dashboard.walletBalance}`}
-              color="bg-green-500"
+              color="bg-emerald-600"
               icon={<FaWallet />}
             />
 
             <StatCard
               title="Total Investment"
               value={`₹${dashboard.totalInvestment}`}
-              color="bg-blue-500"
+              color="bg-blue-600"
               icon={<FaChartLine />}
             />
 
             <StatCard
               title="ROI Earned"
               value={`₹${dashboard.totalROIEarned}`}
-              color="bg-purple-500"
+              color="bg-indigo-600"
               icon={<FaMoneyBillWave />}
             />
 
             <StatCard
               title="Level Income"
               value={`₹${dashboard.totalLevelIncomeEarned}`}
-              color="bg-orange-500"
+              color="bg-amber-700"
               icon={<FaUsers />}
             />
 
             <StatCard
               title="Active Plans"
               value={dashboard.activeInvestments}
-              color="bg-red-500"
+              color="bg-rose-600"
               icon={<FaLayerGroup />}
             />
 
@@ -156,7 +156,7 @@ const Dashboard = () => {
 
           <div className="mt-8 bg-white rounded-xl shadow-md p-6">
 
-            <h2 className="text-2xl font-bold mb-6">
+            <h2 className="text-2xl font-bold mb-6 text-slate-900">
               Referral Information
             </h2>
 
@@ -164,7 +164,7 @@ const Dashboard = () => {
 
               <div>
 
-                <label className="font-semibold text-gray-700">
+                <label className="font-semibold text-slate-800">
                   Referral Code
                 </label>
 
@@ -189,11 +189,11 @@ const Dashboard = () => {
 
               <div>
 
-                <label className="font-semibold text-gray-700">
+                <label className="font-semibold text-slate-800">
                   Direct Referrals
                 </label>
 
-                <div className="mt-2 bg-green-100 text-green-700 text-2xl font-bold rounded-lg p-3">
+                <div className="mt-2 bg-emerald-50 border border-emerald-100 text-emerald-800 text-2xl font-bold rounded-lg p-3">
                   {dashboard.directReferrals}
                 </div>
 
@@ -203,7 +203,7 @@ const Dashboard = () => {
 
             <div className="mt-6">
 
-              <label className="font-semibold text-gray-700">
+              <label className="font-semibold text-slate-800">
                 Referral Link
               </label>
 

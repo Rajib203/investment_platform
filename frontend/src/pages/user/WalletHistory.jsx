@@ -106,29 +106,29 @@ const WalletHistory = () => {
 
           {/* Table */}
 
-          <div className="bg-white rounded-xl shadow overflow-x-auto">
+          <div className="bg-white rounded-xl shadow overflow-hidden border border-slate-200">
 
             <table className="w-full">
 
-              <thead className="bg-gray-100">
+              <thead className="bg-slate-100 text-slate-850 font-bold border-b border-slate-200">
 
                 <tr>
-                  <th className="p-3 text-left">Type</th>
-                  <th className="p-3 text-left">Amount</th>
-                  <th className="p-3 text-left">Status</th>
-                  <th className="p-3 text-left">Description</th>
-                  <th className="p-3 text-left">Date</th>
+                  <th className="p-3.5 text-left">Type</th>
+                  <th className="p-3.5 text-left">Amount</th>
+                  <th className="p-3.5 text-left">Status</th>
+                  <th className="p-3.5 text-left">Description</th>
+                  <th className="p-3.5 text-left">Date</th>
                 </tr>
 
               </thead>
 
-              <tbody>
+              <tbody className="text-slate-700">
 
                 {loading ? (
                   <tr>
                     <td
                       colSpan="5"
-                      className="text-center p-6"
+                      className="text-center p-8 text-slate-650 font-medium animate-pulse"
                     >
                       Loading...
                     </td>
@@ -137,7 +137,7 @@ const WalletHistory = () => {
                   <tr>
                     <td
                       colSpan="5"
-                      className="text-center p-6 text-gray-500"
+                      className="text-center p-8 text-slate-600 font-medium"
                     >
                       No Transactions Found
                     </td>
@@ -146,35 +146,35 @@ const WalletHistory = () => {
                   filteredTransactions.map((item) => (
                     <tr
                       key={item._id}
-                      className="border-b hover:bg-gray-50"
+                      className="border-b border-slate-100 hover:bg-gray-50/50"
                     >
-                      <td className="p-3 font-medium">
+                      <td className="p-3 font-semibold text-slate-900">
                         {item.type}
                       </td>
 
-                      <td className="p-3 font-semibold">
+                      <td className="p-3 font-semibold text-slate-800">
                         ₹{item.amount}
                       </td>
 
                       <td className="p-3">
                         <span
-                          className={`px-3 py-1 rounded-full text-white ${
-                            item.status === "SUCCESS"
-                              ? "bg-green-600"
-                              : item.status === "FAILED"
-                              ? "bg-red-600"
-                              : "bg-yellow-500"
+                          className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                            item.status === "SUCCESS" || item.status === "Success" || item.status === "Approved" || item.status === "Completed"
+                              ? "bg-emerald-100 text-emerald-800"
+                              : item.status === "FAILED" || item.status === "Failed" || item.status === "Rejected"
+                              ? "bg-rose-100 text-rose-800"
+                              : "bg-amber-100 text-amber-850"
                           }`}
                         >
                           {item.status}
                         </span>
                       </td>
 
-                      <td className="p-3">
+                      <td className="p-3 text-slate-700">
                         {item.description}
                       </td>
 
-                      <td className="p-3">
+                      <td className="p-3 text-xs text-slate-600 font-medium">
                         {new Date(
                           item.createdAt
                         ).toLocaleString()}

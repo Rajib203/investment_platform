@@ -102,7 +102,7 @@ const Sidebar = () => {
           <h1 className="text-2xl font-bold tracking-tight text-white">
             Investment
           </h1>
-          <p className="text-xs text-slate-400 mt-0.5">User Portal</p>
+          <p className="text-xs text-slate-300 mt-0.5">User Portal</p>
         </div>
 
         <nav className="space-y-1.5">
@@ -116,7 +116,7 @@ const Sidebar = () => {
                   `flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                     isActive
                       ? "bg-blue-600 text-white shadow-sm"
-                      : "text-slate-400 hover:bg-slate-800/80 hover:text-white"
+                      : "text-slate-300 hover:bg-slate-850 hover:text-white"
                   }`
                 }
               >
@@ -129,7 +129,7 @@ const Sidebar = () => {
       </div>
 
       <div className="pt-4 border-t border-slate-800 px-3">
-        <span className="text-xs text-slate-500 font-medium">
+        <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider">
           User Dashboard
         </span>
       </div>

@@ -14,11 +14,11 @@ const ReferralNode = ({ node }) => {
           {node.user.fullName}
         </h3>
 
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-slate-600">
           {node.user.email}
         </p>
 
-        <p className="text-xs text-blue-600 mt-1">
+        <p className="text-xs text-blue-700 mt-1 font-semibold">
           Referral Code: {node.user.referralCode}
         </p>
       </div>

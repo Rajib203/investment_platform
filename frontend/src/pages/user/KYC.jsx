@@ -102,12 +102,12 @@ const KYC = () => {
               </h1>
 
               <div
-                className={`inline-block px-5 py-3 rounded-lg text-white ${
+                className={`inline-block px-5 py-3 rounded-lg font-bold border uppercase tracking-wider ${
                   kyc.status === "Approved"
-                    ? "bg-green-600"
+                    ? "bg-emerald-100 text-emerald-800 border-emerald-200"
                     : kyc.status === "Rejected"
-                    ? "bg-red-600"
-                    : "bg-yellow-500"
+                    ? "bg-rose-100 text-rose-800 border-rose-200"
+                    : "bg-amber-100 text-amber-800 border-amber-200"
                 }`}
               >
                 {kyc.status}

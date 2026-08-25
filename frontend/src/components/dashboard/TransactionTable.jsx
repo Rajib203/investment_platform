@@ -8,7 +8,7 @@ const TransactionTable = ({ transactions = [] }) => {
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-slate-100 text-slate-850 font-bold border-b border-slate-200">
               <th className="p-3 text-left">Type</th>
               <th className="p-3 text-left">Amount</th>
               <th className="p-3 text-left">Status</th>
@@ -21,7 +21,7 @@ const TransactionTable = ({ transactions = [] }) => {
               <tr>
                 <td
                   colSpan="4"
-                  className="text-center p-6 text-gray-500"
+                  className="text-center p-6 text-slate-650 font-medium"
                 >
                   No Transactions Found
                 </td>
@@ -30,21 +30,29 @@ const TransactionTable = ({ transactions = [] }) => {
               transactions.map((item) => (
                 <tr
                   key={item._id}
-                  className="border-b hover:bg-gray-50"
+                  className="border-b border-slate-100 hover:bg-gray-50/50"
                 >
-                  <td className="p-3">{item.type}</td>
+                  <td className="p-3 font-medium text-slate-900">{item.type}</td>
 
-                  <td className="p-3">
+                  <td className="p-3 text-slate-700 font-semibold">
                     ₹{item.amount}
                   </td>
 
                   <td className="p-3">
-                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full">
-                      {item.status}
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        item.status === "SUCCESS" || item.status === "Success" || item.status === "Completed" || item.status === "Approved"
+                          ? "bg-emerald-100 text-emerald-800"
+                          : item.status === "FAILED" || item.status === "Failed" || item.status === "Rejected"
+                          ? "bg-rose-100 text-rose-800"
+                          : "bg-amber-100 text-amber-800"
+                      }`}
+                    >
+                      {item.status || "Completed"}
                     </span>
                   </td>
 
-                  <td className="p-3">
+                  <td className="p-3 text-slate-600 text-xs font-medium">
                     {new Date(item.createdAt).toLocaleDateString()}
                   </td>
                 </tr>

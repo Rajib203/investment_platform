@@ -102,7 +102,7 @@ const Transactions = () => {
             <h1 className="text-3xl font-bold mb-1 flex items-center gap-2 text-slate-900">
               <FaExchangeAlt className="text-indigo-600" size={24} /> Transactions
             </h1>
-            <p className="text-slate-500 text-sm">
+            <p className="text-slate-600 text-sm">
               Your complete transaction history across deposits, withdrawals, and investments.
             </p>
           </div>
@@ -140,7 +140,7 @@ const Transactions = () => {
           <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
-                <thead className="bg-slate-100/80 text-slate-650 font-semibold uppercase tracking-wider border-b border-slate-200">
+                <thead className="bg-slate-100 text-slate-800 font-bold uppercase tracking-wider border-b border-slate-200">
                   <tr>
                     <th className="p-4">Type</th>
                     <th className="p-4">Amount</th>
@@ -152,13 +152,13 @@ const Transactions = () => {
                 <tbody className="divide-y divide-slate-100 text-slate-700">
                   {loading ? (
                     <tr>
-                      <td colSpan="5" className="text-center p-8 text-slate-500">
+                      <td colSpan="5" className="text-center p-8 text-slate-600 font-semibold">
                         Loading transactions...
                       </td>
                     </tr>
                   ) : filteredTransactions.length === 0 ? (
                     <tr>
-                      <td colSpan="5" className="text-center p-8 text-slate-450">
+                      <td colSpan="5" className="text-center p-8 text-slate-600 font-semibold">
                         No transactions found.
                       </td>
                     </tr>
@@ -186,7 +186,7 @@ const Transactions = () => {
                               {item.transactionId || item._id}
                             </div>
                             {item.description && (
-                              <div className="text-xs text-slate-500 mt-0.5">
+                              <div className="text-xs text-slate-600 mt-0.5">
                                 {item.description}
                               </div>
                             )}
@@ -207,7 +207,7 @@ const Transactions = () => {
                               {item.status || "Completed"}
                             </span>
                           </td>
-                          <td className="p-4 text-xs text-slate-500">
+                          <td className="p-4 text-xs text-slate-600 font-medium">
                             {new Date(item.createdAt).toLocaleDateString()}
                           </td>
                         </tr>
