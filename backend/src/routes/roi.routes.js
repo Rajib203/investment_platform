@@ -7,7 +7,7 @@ import {
 
 const router = express.Router();
 
-router.post("/run", runROI);
+router.post("/run", authMiddleware, runROI);
 router.get("/history", authMiddleware, getROIHistory);
 
-export default router;
+export default router;
